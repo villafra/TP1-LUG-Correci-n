@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BE
+namespace BLL
 {
-    internal class BE_Mesa
+    internal class BLL_Empleado
     {
     }
 }

@@ -41,16 +41,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="1.Entidades\BLL_Pedido.cs" />
+    <Compile Include="1.Entidades\BLL_Reserva.cs" />
+    <Compile Include="1.Entidades\BLL_Turno.cs" />
+    <Compile Include="2.Cocina\BLL_Bebida-Alcohólica.cs" />
+    <Compile Include="2.Cocina\BLL_Bebida.cs" />
+    <Compile Include="2.Cocina\BLL_Mesa.cs" />
+    <Compile Include="2.Cocina\BLL_Plato.cs" />
+    <Compile Include="3.Personal\BLL_Empleado.cs" />
+    <Compile Include="3.Personal\BLL_Mozo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Conexión\Conexión.csproj">
-      <Project>{4c61bd36-9de6-40fd-9768-2c1b3b6ee6c1}</Project>
-      <Name>Conexión</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Entidades\Entidades.csproj">
       <Project>{d6eca80e-806e-4be1-9987-b161cf3d7865}</Project>
       <Name>Entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mapper\Mapper.csproj">
+      <Project>{c12bd00d-f388-4d34-89ab-e7b2abcf16de}</Project>
+      <Name>Mapper</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

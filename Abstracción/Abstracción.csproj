@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D6ECA80E-806E-4BE1-9987-B161CF3D7865}</ProjectGuid>
+    <ProjectGuid>{9AC84139-ABAA-4931-8CE5-F154E392DCF4}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Entidades</RootNamespace>
-    <AssemblyName>Entidades</AssemblyName>
+    <RootNamespace>Abstracción</RootNamespace>
+    <AssemblyName>Abstracción</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -41,15 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="1.Entidades\BE_Reserva.cs" />
-    <Compile Include="1.Entidades\BE_Pedido.cs" />
-    <Compile Include="1.Entidades\BE_Turno.cs" />
-    <Compile Include="2.Cocina\BE_Bebida-Alcohólica.cs" />
-    <Compile Include="2.Cocina\BE_Bebida.cs" />
-    <Compile Include="2.Cocina\BE_Mesa.cs" />
-    <Compile Include="2.Cocina\BE_Plato.cs" />
-    <Compile Include="3.Personal\BE_Empleado.cs" />
-    <Compile Include="3.Personal\BE_Mozo.cs" />
+    <Compile Include="IEntidable.cs" />
+    <Compile Include="IGestionable.cs" />
+    <Compile Include="IStockeable.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

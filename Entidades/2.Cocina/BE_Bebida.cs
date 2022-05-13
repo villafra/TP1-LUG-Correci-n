@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Entidades._2.Cocina
+namespace BE
 {
     internal class BE_Bebida
     {

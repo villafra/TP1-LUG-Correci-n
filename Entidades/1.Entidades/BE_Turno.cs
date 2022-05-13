@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Entidades._1.Entidades
+namespace BE
 {
     internal class BE_Turno
     {

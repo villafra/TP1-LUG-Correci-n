@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BE
+namespace Abstracción
 {
-    internal class BE_Mesa
+    public interface IEntidable
     {
+        int Codigo { get; set; }
     }
 }

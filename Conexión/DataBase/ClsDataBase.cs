@@ -1,93 +1,118 @@
-﻿using System.Data;
+﻿using System;
+using System.Data;
 using System.Data.SqlClient;
 
-namespace Conexión.DataBase
+namespace Conexión
 {
     public class ClsDataBase
     {
-        #region Variables Privadas
+        private SqlConnection conexion;
+        private string connectionString = @"Data Source=(localdb)\server;Initial Catalog=TPN1-LUG;Integrated Security=True";
 
-        private SqlConnection _objsqlConnection;
-        private SqlDataAdapter _objsqlDataAdapter;
-        private SqlCommand _objsqlCommand;
-        private DataSet _dsResultados;
-        private DataTable _dtParámetros;
-        private string _nombreTabla, _nombreSP, _mensajeErrorDB, _valorScalar, _connectionString;
-        private bool _scalar;
-
-
-
-        //_connectionString = @"Data Source=(localdb)\server;Initial Catalog=TPN1-LUG;Integrated Security=True";
-
-
-
-
-
-
-        #endregion
-
-        #region Variables Públicas
-        public SqlConnection ObjsqlConnection { get => _objsqlConnection; set => _objsqlConnection = value; }
-        public SqlDataAdapter ObjsqlDataAdapter { get => _objsqlDataAdapter; set => _objsqlDataAdapter = value; }
-        public SqlCommand ObjsqlCommand { get => _objsqlCommand; set => _objsqlCommand = value; }
-        public DataSet DSResultados { get => _dsResultados; set => _dsResultados = value; }
-        public DataTable DTParámetros { get => _dtParámetros; set => _dtParámetros = value; }
-        public string NombreTabla { get => _nombreTabla; set => _nombreTabla = value; }
-        public string NombreSP { get => _nombreSP; set => _nombreSP = value; }
-        public string MensajeErrorDB { get => _mensajeErrorDB; set => _mensajeErrorDB = value; }
-        public string ValorScalar { get => _valorScalar; set => _valorScalar = value; }
-        public string ConnectionString { get => _connectionString; set => _connectionString = value; }
-        public bool Scalar { get => _scalar; set => _scalar = value; }
-
-
-
-
-        #endregion
-
-        #region Constructores
-        public ClsDataBase()
+        public void AbrirConexion()
         {
-            DTParámetros = new DataTable("SpParámetros");
-            DTParámetros.Columns.Add("Nombre");
-            DTParámetros.Columns.Add("TipoDato");
-            DTParámetros.Columns.Add("Valor");
-
-            ConnectionString = string.Empty;
+            conexion = new SqlConnection();
+            conexion.ConnectionString = connectionString;
+            conexion.Open();
         }
 
-        #endregion
-
-        #region Métodos Privados
-
-        private void CrearConexioinBaseDatos(ref ClsDataBase objDataBase)
+        public void CerrarConexion()
         {
-
-        }
-        private void ValidarConexionBaseDatos(ref ClsDataBase objDataBase)
-        {
-
-        }
-        private void AgregarParametros(ref ClsDataBase objDataBase)
-        {
-
-        }
-        private void PrepararConexionBaseDatos(ref ClsDataBase objDataBase)
-        {
-
-        }
-        private void EjecutarDataAdapter(ref ClsDataBase objDataBase)
-        {
-
-        }
-        private void EjecutarCommand(ref ClsDataBase objDataBase)
-        {
-
+            conexion.Close();
+            conexion.Dispose();
+            conexion = null;
+            GC.Collect();
         }
 
-        #endregion
+        public DataTable DevolverListado(string query)
+        {
+            DataTable table = new DataTable();
+            try
+            {
+                AbrirConexion();
+                SqlCommand cmd = new SqlCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = query;
+                cmd.Connection = conexion;
+                SqlDataAdapter DataAdapter = new SqlDataAdapter(cmd);
+                DataAdapter.Fill(table);
+            }
+            catch (SqlException sql)
+            {
+                Calculos.MsgBox(sql.Message);
+            }
+            catch (Exception ex)
+            {
+                Calculos.MsgBox(ex.Message);
+            }
+            finally
+            {
+                CerrarConexion();
+            }
+            return table;
+        }
 
-        #region Variables Públicos
 
-        #endregion
+        public int Cantidades(string query)
+        {
+            int cantidad = 0;
+            try
+            {
+                AbrirConexion();
+                SqlCommand cmd = new SqlCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = query;
+                cmd.Connection = conexion;
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    if (!reader.IsDBNull(0))
+                    {
+                        cantidad = Convert.ToInt32(reader[0]);
+                    }
+
+                }
+            }
+            catch (SqlException sql)
+            {
+                Calculos.MsgBox(sql.Message);
+            }
+            catch (Exception ex)
+            {
+                Calculos.MsgBox(ex.Message);
+            }
+            finally
+            {
+                CerrarConexion();
+            }
+            return cantidad;
+
+        }
+
+        public bool EscribirDatos(string query)
+        {
+            try
+            {
+                AbrirConexion();
+                SqlCommand cmd = new SqlCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = query;
+                cmd.Connection = conexion;
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+            finally
+            {
+                CerrarConexion();
+            }
+
+        }
     }
+}
 }

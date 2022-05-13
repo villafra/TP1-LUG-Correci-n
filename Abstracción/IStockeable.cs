@@ -4,9 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BE
+namespace Abstracción
 {
-    internal class BE_Mesa
+    public interface IStockeable
     {
+        int Stock { get; set; }
+
+        void AgregarStock(int Cantidad);
     }
 }

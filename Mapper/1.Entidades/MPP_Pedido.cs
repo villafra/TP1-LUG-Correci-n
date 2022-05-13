@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BE
+namespace Mapper
 {
-    internal class BE_Mesa
+    internal class MPP_Pedido
     {
     }
 }
