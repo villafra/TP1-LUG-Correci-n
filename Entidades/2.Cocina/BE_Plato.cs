@@ -18,7 +18,7 @@ namespace BE
 
         public void AgregarStock(int Cantidad)
         {
-            throw new NotImplementedException();
+            Stock += Cantidad;
         }
     }
 }

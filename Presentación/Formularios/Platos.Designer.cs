@@ -64,7 +64,7 @@
             this.dgvPlatos.RowTemplate.Height = 24;
             this.dgvPlatos.Size = new System.Drawing.Size(653, 254);
             this.dgvPlatos.TabIndex = 0;
-            //this.dgvPlatos.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPlatos_RowEnter);
+            this.dgvPlatos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPlatos_CellContentClick);
             // 
             // grpPlatos
             // 
@@ -95,7 +95,6 @@
             this.txtCosto.Size = new System.Drawing.Size(118, 22);
             this.txtCosto.TabIndex = 22;
             this.txtCosto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            //this.txtCosto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCosto_KeyPress);
             // 
             // lblCosto
             // 
@@ -187,7 +186,7 @@
             // lblCantidad
             // 
             this.lblCantidad.AutoSize = true;
-            this.lblCantidad.Location = new System.Drawing.Point(708, 91);
+            this.lblCantidad.Location = new System.Drawing.Point(691, 91);
             this.lblCantidad.Name = "lblCantidad";
             this.lblCantidad.Size = new System.Drawing.Size(14, 16);
             this.lblCantidad.TabIndex = 10;
@@ -197,7 +196,6 @@
             // 
             this.prgFrecuencia.BackColor = System.Drawing.SystemColors.HotTrack;
             this.prgFrecuencia.Location = new System.Drawing.Point(641, 125);
-            this.prgFrecuencia.Maximum = 10;
             this.prgFrecuencia.Name = "prgFrecuencia";
             this.prgFrecuencia.Size = new System.Drawing.Size(157, 42);
             this.prgFrecuencia.Step = 1;
@@ -206,7 +204,7 @@
             // lblFrecuenciaPlato
             // 
             this.lblFrecuenciaPlato.AutoSize = true;
-            this.lblFrecuenciaPlato.Location = new System.Drawing.Point(638, 33);
+            this.lblFrecuenciaPlato.Location = new System.Drawing.Point(662, 33);
             this.lblFrecuenciaPlato.Name = "lblFrecuenciaPlato";
             this.lblFrecuenciaPlato.Size = new System.Drawing.Size(67, 16);
             this.lblFrecuenciaPlato.TabIndex = 8;
@@ -239,7 +237,6 @@
             this.btnEliminarPlato.Size = new System.Drawing.Size(100, 93);
             this.btnEliminarPlato.TabIndex = 4;
             this.btnEliminarPlato.UseVisualStyleBackColor = true;
-            //this.btnEliminarPlato.Click += new System.EventHandler(this.btnEliminarPlato_Click);
             // 
             // btnModificarPlato
             // 
@@ -254,7 +251,6 @@
             this.btnModificarPlato.Size = new System.Drawing.Size(100, 93);
             this.btnModificarPlato.TabIndex = 3;
             this.btnModificarPlato.UseVisualStyleBackColor = true;
-            //this.btnModificarPlato.Click += new System.EventHandler(this.btnModificarPlato_Click);
             // 
             // btnNuevoPlato
             // 
@@ -269,7 +265,6 @@
             this.btnNuevoPlato.Size = new System.Drawing.Size(100, 93);
             this.btnNuevoPlato.TabIndex = 2;
             this.btnNuevoPlato.UseVisualStyleBackColor = true;
-            //this.btnNuevoPlato.Click += new System.EventHandler(this.btnNuevoPlato_Click);
             // 
             // frmPlatos
             // 
@@ -285,8 +280,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmPlatos";
             this.Text = "Mesas";
-            //this.Activated += new System.EventHandler(this.frmPlatos_Activated);
-            //this.Load += new System.EventHandler(this.frmPlatos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPlatos)).EndInit();
             this.grpPlatos.ResumeLayout(false);
             this.grpPlatos.PerformLayout();
