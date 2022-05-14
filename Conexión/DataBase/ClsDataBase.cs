@@ -39,11 +39,11 @@ namespace Conexión
             }
             catch (SqlException sql)
             {
-                Calculos.MsgBox(sql.Message);
+                //Calculos.MsgBox(sql.Message);
             }
             catch (Exception ex)
             {
-                Calculos.MsgBox(ex.Message);
+                //Calculos.MsgBox(ex.Message);
             }
             finally
             {
@@ -76,11 +76,11 @@ namespace Conexión
             }
             catch (SqlException sql)
             {
-                Calculos.MsgBox(sql.Message);
+                //Calculos.MsgBox(sql.Message);
             }
             catch (Exception ex)
             {
-                Calculos.MsgBox(ex.Message);
+                //Calculos.MsgBox(ex.Message);
             }
             finally
             {
@@ -104,7 +104,7 @@ namespace Conexión
             }
             catch (SqlException ex)
             {
-                MessageBox.Show(ex.Message);
+                //MessageBox.Show(ex.Message);
                 return false;
             }
             finally
@@ -115,4 +115,4 @@ namespace Conexión
         }
     }
 }
-}
+
