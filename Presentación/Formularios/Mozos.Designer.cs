@@ -66,7 +66,7 @@
             this.dgvMozos.RowTemplate.Height = 24;
             this.dgvMozos.Size = new System.Drawing.Size(651, 254);
             this.dgvMozos.TabIndex = 0;
-            //this.dgvMozos.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMozos_RowEnter);
+            this.dgvMozos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMozos_CellContentClick);
             // 
             // grpMozos
             // 
@@ -187,7 +187,6 @@
             this.txtDNI.Size = new System.Drawing.Size(102, 22);
             this.txtDNI.TabIndex = 14;
             this.txtDNI.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            //this.txtDNI.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDNI_KeyPress);
             // 
             // lblDNI
             // 
@@ -257,7 +256,7 @@
             this.btnEliminarMozo.Size = new System.Drawing.Size(100, 93);
             this.btnEliminarMozo.TabIndex = 4;
             this.btnEliminarMozo.UseVisualStyleBackColor = true;
-            //this.btnEliminarMozo.Click += new System.EventHandler(this.btnEliminarMozo_Click);
+            this.btnEliminarMozo.Click += new System.EventHandler(this.btnEliminarMozo_Click);
             // 
             // btnModificarMozo
             // 
@@ -272,7 +271,7 @@
             this.btnModificarMozo.Size = new System.Drawing.Size(100, 93);
             this.btnModificarMozo.TabIndex = 3;
             this.btnModificarMozo.UseVisualStyleBackColor = true;
-            //this.btnModificarMozo.Click += new System.EventHandler(this.btnModificarMozo_Click);
+            this.btnModificarMozo.Click += new System.EventHandler(this.btnModificarMozo_Click);
             // 
             // btnNuevaMozo
             // 
@@ -287,7 +286,7 @@
             this.btnNuevaMozo.Size = new System.Drawing.Size(100, 93);
             this.btnNuevaMozo.TabIndex = 2;
             this.btnNuevaMozo.UseVisualStyleBackColor = true;
-            //this.btnNuevaMozo.Click += new System.EventHandler(this.btnNuevaMozo_Click);
+            this.btnNuevaMozo.Click += new System.EventHandler(this.btnNuevaMozo_Click);
             // 
             // frmMozos
             // 
@@ -302,8 +301,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmMozos";
             this.Text = "Mesas";
-            //this.Activated += new System.EventHandler(this.frmMozos_Activated);
-            //this.Load += new System.EventHandler(this.frmMozos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMozos)).EndInit();
             this.grpMozos.ResumeLayout(false);
             this.grpMozos.PerformLayout();

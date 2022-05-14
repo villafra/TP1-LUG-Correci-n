@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace BE
 {
-    internal class BE_Mozo : BE_Empleado
+    public class BE_Mozo : BE_Empleado
     {
+        public int Puntuación { get; set; }
+
+        public override string ToString()
+        {
+            return this.Nombre + " " + this.Apellido;
+        }
     }
 }

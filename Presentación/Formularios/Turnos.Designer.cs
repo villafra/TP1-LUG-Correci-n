@@ -62,7 +62,7 @@
             this.dgvTurnos.RowTemplate.Height = 24;
             this.dgvTurnos.Size = new System.Drawing.Size(568, 254);
             this.dgvTurnos.TabIndex = 0;
-            //this.dgvTurnos.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTurnos_RowEnter);
+            this.dgvTurnos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTurnos_CellContentClick);
             // 
             // grpTurnos
             // 
@@ -113,6 +113,7 @@
             this.dtpHoraFin.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpHoraFin.Location = new System.Drawing.Point(201, 145);
             this.dtpHoraFin.Name = "dtpHoraFin";
+            this.dtpHoraFin.ShowUpDown = true;
             this.dtpHoraFin.Size = new System.Drawing.Size(121, 22);
             this.dtpHoraFin.TabIndex = 27;
             // 
@@ -131,6 +132,7 @@
             this.dtpHoraInicio.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpHoraInicio.Location = new System.Drawing.Point(27, 145);
             this.dtpHoraInicio.Name = "dtpHoraInicio";
+            this.dtpHoraInicio.ShowUpDown = true;
             this.dtpHoraInicio.Size = new System.Drawing.Size(121, 22);
             this.dtpHoraInicio.TabIndex = 25;
             // 
@@ -211,7 +213,7 @@
             this.btnEliminarTurno.Size = new System.Drawing.Size(100, 93);
             this.btnEliminarTurno.TabIndex = 4;
             this.btnEliminarTurno.UseVisualStyleBackColor = true;
-            //this.btnEliminarTurno.Click += new System.EventHandler(this.btnEliminarTurno_Click);
+            this.btnEliminarTurno.Click += new System.EventHandler(this.btnEliminarTurno_Click);
             // 
             // btnModificarTurno
             // 
@@ -226,7 +228,7 @@
             this.btnModificarTurno.Size = new System.Drawing.Size(100, 93);
             this.btnModificarTurno.TabIndex = 3;
             this.btnModificarTurno.UseVisualStyleBackColor = true;
-            //this.btnModificarTurno.Click += new System.EventHandler(this.btnModificarTurno_Click);
+            this.btnModificarTurno.Click += new System.EventHandler(this.btnModificarTurno_Click);
             // 
             // btnNuevoTurno
             // 
@@ -241,7 +243,7 @@
             this.btnNuevoTurno.Size = new System.Drawing.Size(100, 93);
             this.btnNuevoTurno.TabIndex = 2;
             this.btnNuevoTurno.UseVisualStyleBackColor = true;
-            //this.btnNuevoTurno.Click += new System.EventHandler(this.btnNuevoTurno_Click);
+            this.btnNuevoTurno.Click += new System.EventHandler(this.btnNuevoTurno_Click);
             // 
             // frmTurnos
             // 
@@ -256,8 +258,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmTurnos";
             this.Text = "Mesas";
-            //this.Activated += new System.EventHandler(this.frmTurnos_Activated);
-            //this.Load += new System.EventHandler(this.frmTurnos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTurnos)).EndInit();
             this.grpTurnos.ResumeLayout(false);
             this.grpTurnos.PerformLayout();

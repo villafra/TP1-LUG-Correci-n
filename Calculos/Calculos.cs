@@ -122,6 +122,16 @@ namespace Calculo
         {
             dgv.DataSource = null;
         }
+ 
+        public static void DataSourceCombo(ComboBox combo, object refObject, string DisplayMember)
+        {
+            combo.DataSource = null;
+            combo.DataSource = refObject;
+            combo.ValueMember = "Codigo";
+            combo.DisplayMember = DisplayMember;
+            combo.Refresh();
+
+        }
 
         public static void MsgBox(string mensaje)
         {

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Mapper
 {
-    internal class MPP_Empleado
+    public class MPP_Empleado
     {
     }
 }

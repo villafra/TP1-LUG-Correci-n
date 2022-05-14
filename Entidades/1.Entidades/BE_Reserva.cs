@@ -3,10 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Abstracción;
 
 namespace BE
 {
-    internal class BE_Reserva
+    public class BE_Reserva : IEntidable
     {
+        public int Codigo { get; set; }
+        public BE_Mesa MesaReservada { get; set; }
+        public BE_Pedido PedidoReservado { get; set; }
+        public DateTime FechaReserva { get; set; }
+        public int CantidadDeComensales { get; set; }
+        public bool Estado { get; set; }
     }
 }

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Entidades._2.Cocina
+namespace BLL
 {
-    internal class BE_Bebida_Alcohólica : BLL_Bebida
+    public class BLL_Bebida_Alcohólica : BLL_Bebida
     {
     }
 }

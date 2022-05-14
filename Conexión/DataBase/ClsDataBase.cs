@@ -1,18 +1,18 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Configuration;
 
 namespace Conexión
 {
     public class ClsDataBase
     {
         private SqlConnection conexion;
-        private string connectionString = @"Data Source=(localdb)\server;Initial Catalog=TPN1-LUG;Integrated Security=True";
-
+        
         public void AbrirConexion()
         {
             conexion = new SqlConnection();
-            conexion.ConnectionString = connectionString;
+            conexion.ConnectionString = ConfigurationManager.ConnectionStrings["Conexión"].ToString();
             conexion.Open();
         }
 
@@ -24,32 +24,28 @@ namespace Conexión
             GC.Collect();
         }
 
-        public DataTable DevolverListado(string query)
+        public DataSet DevolverListado(string query)
         {
-            DataTable table = new DataTable();
+            AbrirConexion();
+            DataSet Ds = new DataSet();
             try
             {
-                AbrirConexion();
-                SqlCommand cmd = new SqlCommand();
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = query;
-                cmd.Connection = conexion;
-                SqlDataAdapter DataAdapter = new SqlDataAdapter(cmd);
-                DataAdapter.Fill(table);
+                SqlDataAdapter DataAdapter = new SqlDataAdapter(query, conexion);
+                DataAdapter.Fill(Ds);
             }
             catch (SqlException sql)
             {
-                //Calculos.MsgBox(sql.Message);
+                throw sql;
             }
             catch (Exception ex)
             {
-                //Calculos.MsgBox(ex.Message);
+                throw ex;
             }
             finally
             {
                 CerrarConexion();
             }
-            return table;
+            return Ds;
         }
 
 
@@ -76,11 +72,11 @@ namespace Conexión
             }
             catch (SqlException sql)
             {
-                //Calculos.MsgBox(sql.Message);
+                throw sql;
             }
             catch (Exception ex)
             {
-                //Calculos.MsgBox(ex.Message);
+                throw ex;
             }
             finally
             {
@@ -102,16 +98,120 @@ namespace Conexión
                 cmd.ExecuteNonQuery();
                 return true;
             }
-            catch (SqlException ex)
+            catch (SqlException sql)
             {
-                //MessageBox.Show(ex.Message);
                 return false;
+                throw sql;
+            }
+            catch (Exception ex)
+            {
+                return false;
+                throw ex;
             }
             finally
             {
                 CerrarConexion();
             }
 
+        }
+
+        public bool LeerScalar(string query)
+        {
+            AbrirConexion();
+            SqlCommand cmd = new SqlCommand(query, conexion);
+            cmd.CommandType = CommandType.Text;
+            try
+            {
+                int Respuesta = Convert.ToInt32(cmd.ExecuteScalar());
+                if (Respuesta > 0)
+                { return true; }
+                else
+                { return false; }
+            }
+            catch (SqlException ex)
+            { throw ex; }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                CerrarConexion();
+            }
+        }
+
+        public bool EscribirTransaction(string query)
+        {
+            AbrirConexion();
+            SqlTransaction sqlTransaction;
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = conexion;
+            cmd.CommandText = query;
+            sqlTransaction = conexion.BeginTransaction();
+
+            try
+            {
+                cmd.Transaction = sqlTransaction;
+                cmd.ExecuteNonQuery();
+                sqlTransaction.Commit();
+                return true;
+            }
+            catch (SqlException ex)
+            {
+                sqlTransaction.Rollback();
+                return false;
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                sqlTransaction.Rollback();
+                return false;
+                throw ex;
+            }
+            finally
+            {
+                CerrarConexion();
+            }
+        }
+
+        public bool EscribirTransaction(string[] query)
+        {
+            AbrirConexion();
+            SqlTransaction sqlTransaction;
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = conexion;
+            sqlTransaction = conexion.BeginTransaction();
+
+            try
+            {
+                for (int i = 0; i < query.Length; i++)
+                {
+                    cmd.CommandText = query[i];
+                    cmd.Transaction = sqlTransaction;
+                    cmd.ExecuteNonQuery();
+                }
+
+                sqlTransaction.Commit();
+                return true;
+            }
+            catch (SqlException ex)
+            {
+                sqlTransaction.Rollback();
+                return false;
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                sqlTransaction.Rollback();
+                return false;
+                throw ex;
+            }
+            finally
+            {
+                CerrarConexion();
+            }
         }
     }
 }

@@ -194,5 +194,196 @@ namespace Estética
         {
             boton.BackColor = Color.FromArgb(24, 30, 54);
         };
+
+        #region FormatearDGV
+        public static void DGVTurnos(DataGridView dgv)
+        {
+            dgv.Columns[0].HeaderText = "Código";
+            dgv.Columns[1].HeaderText = "Nombre del Turno";
+            dgv.Columns[2].HeaderText = "Hora de Inicio";
+            dgv.Columns[2].DefaultCellStyle.Format = "t";
+            dgv.Columns[3].HeaderText = "Hora de Fin";
+            dgv.Columns[3].DefaultCellStyle.Format = "t";
+
+            foreach (DataGridViewColumn columns in dgv.Columns)
+            {
+                columns.SortMode = DataGridViewColumnSortMode.NotSortable;
+                columns.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            }
+            dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+        }
+        public static void DGVMozos(DataGridView dgv)
+        {
+            dgv.Columns[0].HeaderText = "Puntuación";
+            dgv.Columns[0].DisplayIndex = 5;
+            dgv.Columns[1].HeaderText = "Legajo";
+            dgv.Columns[2].HeaderText = "DNI";
+            dgv.Columns[3].HeaderText = "Nombre";
+            dgv.Columns[4].HeaderText = "Apellido";
+            dgv.Columns[5].Visible = false;
+            foreach (DataGridViewColumn columns in dgv.Columns)
+            {
+                columns.SortMode = DataGridViewColumnSortMode.NotSortable;
+                columns.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            }
+            dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+        }
+        public static void DGVMesas(DataGridView dgv)
+        {
+            dgv.Columns[0].Visible = false;
+            dgv.Columns[1].HeaderText = "Número";
+            dgv.Columns[2].HeaderText = "Capacidad Máxima";
+            dgv.Columns[3].HeaderText = "Estado Actual";
+            dgv.Columns[4].HeaderText = "Cant Ocupantes";
+            foreach (DataGridViewColumn columns in dgv.Columns)
+            {
+                columns.SortMode = DataGridViewColumnSortMode.NotSortable;
+                columns.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            }
+            dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+        }
+        public static void DGVTurnosMozos(DataGridView dgv)
+        {
+            dgv.Columns[0].Visible = false;
+            dgv.Columns[2].Visible = false;
+            dgv.Columns[5].Visible = false;
+            foreach (DataGridViewColumn columns in dgv.Columns)
+            {
+                columns.SortMode = DataGridViewColumnSortMode.NotSortable;
+                columns.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            }
+            dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+        }
+        public static void DGVPlatos(DataGridView dgv)
+        {
+            dgv.Columns[0].Visible = false;
+            dgv.Columns[1].HeaderText = "Nombre del Plato";
+            dgv.Columns[2].HeaderText = "Tipo de Plato";
+            dgv.Columns[3].HeaderText = "Clase de Plato";
+            dgv.Columns[5].DefaultCellStyle.Format = "c";
+
+            foreach (DataGridViewColumn columns in dgv.Columns)
+            {
+                columns.SortMode = DataGridViewColumnSortMode.NotSortable;
+                columns.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            }
+            dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+        }
+        public static void DGVPedidosXPlatos(DataGridView dgv)
+        {
+            dgv.Columns[0].HeaderText = "Número";
+            dgv.Columns[1].Visible = false;
+            dgv.Columns[2].Visible = false;
+            dgv.Columns[3].Visible = false;
+            dgv.Columns[4].Visible = false;
+            dgv.Columns[5].HeaderText = "Monto";
+            dgv.Columns[6].Visible = false;
+
+            foreach (DataGridViewColumn columns in dgv.Columns)
+            {
+                columns.SortMode = DataGridViewColumnSortMode.NotSortable;
+                columns.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            }
+            dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+        }
+        public static void DGVBebidas(DataGridView dgv)
+        {
+            dgv.Columns[0].Visible = false;
+            dgv.Columns[1].HeaderText = "Nombre";
+            dgv.Columns[2].HeaderText = "Tipo";
+            dgv.Columns[3].HeaderText = "Presentación";
+            dgv.Columns[4].HeaderText = "Precio";
+            dgv.Columns[5].HeaderText = "Stock";
+
+            foreach (DataGridViewColumn columns in dgv.Columns)
+            {
+                columns.SortMode = DataGridViewColumnSortMode.NotSortable;
+                columns.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            }
+            dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+        }
+        public static void DGVReservas(DataGridView dgv)
+        {
+            dgv.Columns[0].HeaderText = "Nro";
+            dgv.Columns[1].HeaderText = "Mesa";
+            dgv.Columns[2].Visible = false;
+            dgv.Columns[3].HeaderText = "Fecha";
+            dgv.Columns[4].HeaderText = "Comensales";
+            dgv.Columns[5].Visible = false;
+
+            foreach (DataGridViewColumn columns in dgv.Columns)
+            {
+                columns.SortMode = DataGridViewColumnSortMode.NotSortable;
+                columns.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            }
+            dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+        }
+        public static void DGVMesasDisponibles(DataGridView dgv)
+        {
+            dgv.Columns[0].Visible = false;
+            dgv.Columns[1].HeaderText = "Número";
+            dgv.Columns[2].HeaderText = "Capacidad Máxima";
+            dgv.Columns[3].Visible = false;
+            dgv.Columns[4].Visible = false;
+            foreach (DataGridViewColumn columns in dgv.Columns)
+            {
+                columns.SortMode = DataGridViewColumnSortMode.NotSortable;
+                columns.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            }
+            dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+        }
+        public static void DGVPedidos(DataGridView dgv)
+        {
+            dgv.Columns[0].HeaderText = "Nro";
+            dgv.Columns[1].Visible = false;
+            dgv.Columns[2].Visible = false;
+            dgv.Columns[3].HeaderText = "Fecha";
+            dgv.Columns[3].DefaultCellStyle.Format = "dd/MM HH:mm";
+            dgv.Columns[4].HeaderText = "Observaciones";
+            dgv.Columns[5].HeaderText = "Monto";
+            dgv.Columns[5].DefaultCellStyle.Format = "c";
+            dgv.Columns[6].HeaderText = "Activo?";
+            foreach (DataGridViewColumn columns in dgv.Columns)
+            {
+                columns.SortMode = DataGridViewColumnSortMode.NotSortable;
+                columns.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            }
+            dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+        }
+        public static void DGVPlatosPedidos(DataGridView dgv)
+        {
+            dgv.Columns[0].Visible = false;
+            dgv.Columns[1].HeaderText = "Plato";
+            dgv.Columns[2].Visible = false;
+            dgv.Columns[3].Visible = false;
+            dgv.Columns[4].Visible = false;
+            dgv.Columns[5].HeaderText = "Precio";
+            dgv.Columns[5].DefaultCellStyle.Format = "c";
+            foreach (DataGridViewColumn columns in dgv.Columns)
+            {
+                columns.SortMode = DataGridViewColumnSortMode.NotSortable;
+                columns.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            }
+            dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+        }
+        public static void DGVBebidasPedidos(DataGridView dgv)
+        {
+            dgv.Columns[0].Visible = false;
+            dgv.Columns[1].HeaderText = "Bebida";
+            dgv.Columns[2].Visible = false;
+            dgv.Columns[3].Visible = false;
+            dgv.Columns[5].Visible = false;
+            dgv.Columns[4].DefaultCellStyle.Format = "c";
+            foreach (DataGridViewColumn columns in dgv.Columns)
+            {
+                columns.SortMode = DataGridViewColumnSortMode.NotSortable;
+                columns.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            }
+            dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+        }
+
+        #endregion
+
+        
     }
 }

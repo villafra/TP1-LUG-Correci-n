@@ -5,10 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using Abstracción;
 
-namespace BE
+namespace Entidades
 {
-    public class BE_Bebida_Alcohólica : BE_Bebida
+    public class BE_Ranking:IEntidable
     {
-        public decimal GraduaciónAlcoholica { get; set; }
+        public int Codigo { get; set; }
+
     }
 }

@@ -87,6 +87,7 @@
             this.btnPedidos.TabIndex = 15;
             this.btnPedidos.Text = "Pedidos";
             this.btnPedidos.UseVisualStyleBackColor = true;
+            this.btnPedidos.Click += new System.EventHandler(this.btnPedidos_Click);
             // 
             // btnInformes
             // 
@@ -99,6 +100,7 @@
             this.btnInformes.TabIndex = 14;
             this.btnInformes.Text = "Informes";
             this.btnInformes.UseVisualStyleBackColor = true;
+            //this.btnInformes.Click += new System.EventHandler(this.btnInformes_Click);
             // 
             // btnSalir
             // 
@@ -135,6 +137,7 @@
             this.btnLayout.TabIndex = 6;
             this.btnLayout.Text = "Layout";
             this.btnLayout.UseVisualStyleBackColor = true;
+            this.btnLayout.Click += new System.EventHandler(this.btnLayout_Click);
             // 
             // btnReservas
             // 
@@ -147,6 +150,7 @@
             this.btnReservas.TabIndex = 7;
             this.btnReservas.Text = "Reservas";
             this.btnReservas.UseVisualStyleBackColor = true;
+            this.btnReservas.Click += new System.EventHandler(this.btnReservas_Click);
             // 
             // mStripMenu
             // 
@@ -179,8 +183,9 @@
             this.toolStripMenuItem1.Font = new System.Drawing.Font("Nirmala UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripMenuItem1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(213, 28);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(224, 28);
             this.toolStripMenuItem1.Text = "Menu Principal";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // toolStripMenuItem2
             // 
@@ -188,38 +193,44 @@
             this.toolStripMenuItem2.Font = new System.Drawing.Font("Nirmala UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripMenuItem2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(249)))));
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(213, 28);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(224, 28);
             this.toolStripMenuItem2.Text = "Salir";
+            this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
             // 
             // MesasToolStripMenuItem
             // 
             this.MesasToolStripMenuItem.Name = "MesasToolStripMenuItem";
             this.MesasToolStripMenuItem.Size = new System.Drawing.Size(64, 24);
             this.MesasToolStripMenuItem.Text = "Mesas";
+            this.MesasToolStripMenuItem.Click += new System.EventHandler(this.MesasToolStripMenuItem_Click);
             // 
             // MozosToolStripMenuItem
             // 
             this.MozosToolStripMenuItem.Name = "MozosToolStripMenuItem";
             this.MozosToolStripMenuItem.Size = new System.Drawing.Size(67, 24);
             this.MozosToolStripMenuItem.Text = "Mozos";
+            this.MozosToolStripMenuItem.Click += new System.EventHandler(this.MozosToolStripMenuItem_Click);
             // 
             // TurnosToolStripMenuItem
             // 
             this.TurnosToolStripMenuItem.Name = "TurnosToolStripMenuItem";
             this.TurnosToolStripMenuItem.Size = new System.Drawing.Size(67, 24);
             this.TurnosToolStripMenuItem.Text = "Turnos";
+            this.TurnosToolStripMenuItem.Click += new System.EventHandler(this.TurnosToolStripMenuItem_Click);
             // 
             // PlatosToolStripMenuItem
             // 
             this.PlatosToolStripMenuItem.Name = "PlatosToolStripMenuItem";
             this.PlatosToolStripMenuItem.Size = new System.Drawing.Size(63, 24);
             this.PlatosToolStripMenuItem.Text = "Platos";
+            this.PlatosToolStripMenuItem.Click += new System.EventHandler(this.PlatosToolStripMenuItem_Click);
             // 
             // BebidasToolStripMenuItem
             // 
             this.BebidasToolStripMenuItem.Name = "BebidasToolStripMenuItem";
             this.BebidasToolStripMenuItem.Size = new System.Drawing.Size(76, 24);
             this.BebidasToolStripMenuItem.Text = "Bebidas";
+            this.BebidasToolStripMenuItem.Click += new System.EventHandler(this.BebidasToolStripMenuItem_Click);
             // 
             // frmMenu
             // 

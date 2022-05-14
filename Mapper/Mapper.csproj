@@ -53,6 +53,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Abstracción\Abstracción.csproj">
+      <Project>{9ac84139-abaa-4931-8ce5-f154e392dcf4}</Project>
+      <Name>Abstracción</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Conexión\Conexión.csproj">
       <Project>{4c61bd36-9de6-40fd-9768-2c1b3b6ee6c1}</Project>
       <Name>Conexión</Name>
