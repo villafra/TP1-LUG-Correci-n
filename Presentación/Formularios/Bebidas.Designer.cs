@@ -46,9 +46,9 @@
             this.prgCantidad = new System.Windows.Forms.ProgressBar();
             this.lblStock = new System.Windows.Forms.Label();
             this.btnAgregarStock = new System.Windows.Forms.Button();
-            this.btnEliminarTurno = new System.Windows.Forms.Button();
-            this.btnModificarTurno = new System.Windows.Forms.Button();
-            this.btnNuevoTurno = new System.Windows.Forms.Button();
+            this.btnEliminarBebida = new System.Windows.Forms.Button();
+            this.btnModificarBebida = new System.Windows.Forms.Button();
+            this.btnNuevaBebida = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBebidas)).BeginInit();
             this.grpBebidas.SuspendLayout();
             this.SuspendLayout();
@@ -65,7 +65,7 @@
             this.dgvBebidas.RowTemplate.Height = 24;
             this.dgvBebidas.Size = new System.Drawing.Size(612, 254);
             this.dgvBebidas.TabIndex = 0;
-            //this.dgvBebidas.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBebidas_RowEnter);
+            this.dgvBebidas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBebidas_CellContentClick);
             // 
             // grpBebidas
             // 
@@ -104,15 +104,16 @@
             this.comboTipo.Name = "comboTipo";
             this.comboTipo.Size = new System.Drawing.Size(194, 24);
             this.comboTipo.TabIndex = 37;
+            this.comboTipo.TextChanged += new System.EventHandler(this.comboTipo_TextChanged);
             // 
             // txtABV
             // 
+            this.txtABV.Enabled = false;
             this.txtABV.Location = new System.Drawing.Point(441, 146);
             this.txtABV.Name = "txtABV";
             this.txtABV.Size = new System.Drawing.Size(123, 22);
             this.txtABV.TabIndex = 36;
             this.txtABV.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            //this.txtABV.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtABV_KeyPress);
             // 
             // lblABV
             // 
@@ -130,7 +131,6 @@
             this.txtPrecio.Size = new System.Drawing.Size(123, 22);
             this.txtPrecio.TabIndex = 34;
             this.txtPrecio.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            //this.txtPrecio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecio_KeyPress);
             // 
             // lblPrecio
             // 
@@ -244,52 +244,52 @@
             this.btnAgregarStock.Size = new System.Drawing.Size(100, 93);
             this.btnAgregarStock.TabIndex = 5;
             this.btnAgregarStock.UseVisualStyleBackColor = true;
-            //this.btnAgregarStock.Click += new System.EventHandler(this.btnAgregarStock_Click);
+            this.btnAgregarStock.Click += new System.EventHandler(this.btnAgregarStock_Click);
             // 
-            // btnEliminarTurno
+            // btnEliminarBebida
             // 
-            this.btnEliminarTurno.BackgroundImage = global::Presentación.Properties.Resources.Picture18;
-            this.btnEliminarTurno.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnEliminarTurno.FlatAppearance.BorderSize = 0;
-            this.btnEliminarTurno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminarTurno.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminarTurno.ForeColor = System.Drawing.Color.Gold;
-            this.btnEliminarTurno.Location = new System.Drawing.Point(738, 504);
-            this.btnEliminarTurno.Name = "btnEliminarTurno";
-            this.btnEliminarTurno.Size = new System.Drawing.Size(100, 93);
-            this.btnEliminarTurno.TabIndex = 4;
-            this.btnEliminarTurno.UseVisualStyleBackColor = true;
-            //this.btnEliminarTurno.Click += new System.EventHandler(this.btnEliminarBebida_Click);
+            this.btnEliminarBebida.BackgroundImage = global::Presentación.Properties.Resources.Picture18;
+            this.btnEliminarBebida.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEliminarBebida.FlatAppearance.BorderSize = 0;
+            this.btnEliminarBebida.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminarBebida.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminarBebida.ForeColor = System.Drawing.Color.Gold;
+            this.btnEliminarBebida.Location = new System.Drawing.Point(738, 504);
+            this.btnEliminarBebida.Name = "btnEliminarBebida";
+            this.btnEliminarBebida.Size = new System.Drawing.Size(100, 93);
+            this.btnEliminarBebida.TabIndex = 4;
+            this.btnEliminarBebida.UseVisualStyleBackColor = true;
+            this.btnEliminarBebida.Click += new System.EventHandler(this.btnEliminarBebida_Click);
             // 
-            // btnModificarTurno
+            // btnModificarBebida
             // 
-            this.btnModificarTurno.BackgroundImage = global::Presentación.Properties.Resources.Picture17;
-            this.btnModificarTurno.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnModificarTurno.FlatAppearance.BorderSize = 0;
-            this.btnModificarTurno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnModificarTurno.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificarTurno.ForeColor = System.Drawing.Color.Gold;
-            this.btnModificarTurno.Location = new System.Drawing.Point(373, 504);
-            this.btnModificarTurno.Name = "btnModificarTurno";
-            this.btnModificarTurno.Size = new System.Drawing.Size(100, 93);
-            this.btnModificarTurno.TabIndex = 3;
-            this.btnModificarTurno.UseVisualStyleBackColor = true;
-            //this.btnModificarTurno.Click += new System.EventHandler(this.btnModificarBebida_Click);
+            this.btnModificarBebida.BackgroundImage = global::Presentación.Properties.Resources.Picture17;
+            this.btnModificarBebida.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnModificarBebida.FlatAppearance.BorderSize = 0;
+            this.btnModificarBebida.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnModificarBebida.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModificarBebida.ForeColor = System.Drawing.Color.Gold;
+            this.btnModificarBebida.Location = new System.Drawing.Point(373, 504);
+            this.btnModificarBebida.Name = "btnModificarBebida";
+            this.btnModificarBebida.Size = new System.Drawing.Size(100, 93);
+            this.btnModificarBebida.TabIndex = 3;
+            this.btnModificarBebida.UseVisualStyleBackColor = true;
+            this.btnModificarBebida.Click += new System.EventHandler(this.btnModificarBebida_Click);
             // 
-            // btnNuevoTurno
+            // btnNuevaBebida
             // 
-            this.btnNuevoTurno.BackgroundImage = global::Presentación.Properties.Resources.espiritu;
-            this.btnNuevoTurno.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnNuevoTurno.FlatAppearance.BorderSize = 0;
-            this.btnNuevoTurno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNuevoTurno.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNuevoTurno.ForeColor = System.Drawing.Color.Gold;
-            this.btnNuevoTurno.Location = new System.Drawing.Point(12, 504);
-            this.btnNuevoTurno.Name = "btnNuevoTurno";
-            this.btnNuevoTurno.Size = new System.Drawing.Size(100, 93);
-            this.btnNuevoTurno.TabIndex = 2;
-            this.btnNuevoTurno.UseVisualStyleBackColor = true;
-            //this.btnNuevoTurno.Click += new System.EventHandler(this.btnNuevaBebida_Click);
+            this.btnNuevaBebida.BackgroundImage = global::Presentación.Properties.Resources.espiritu;
+            this.btnNuevaBebida.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnNuevaBebida.FlatAppearance.BorderSize = 0;
+            this.btnNuevaBebida.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevaBebida.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevaBebida.ForeColor = System.Drawing.Color.Gold;
+            this.btnNuevaBebida.Location = new System.Drawing.Point(12, 504);
+            this.btnNuevaBebida.Name = "btnNuevaBebida";
+            this.btnNuevaBebida.Size = new System.Drawing.Size(100, 93);
+            this.btnNuevaBebida.TabIndex = 2;
+            this.btnNuevaBebida.UseVisualStyleBackColor = true;
+            this.btnNuevaBebida.Click += new System.EventHandler(this.btnNuevaBebida_Click);
             // 
             // frmBebidas
             // 
@@ -297,16 +297,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(847, 609);
             this.Controls.Add(this.btnAgregarStock);
-            this.Controls.Add(this.btnEliminarTurno);
-            this.Controls.Add(this.btnModificarTurno);
-            this.Controls.Add(this.btnNuevoTurno);
+            this.Controls.Add(this.btnEliminarBebida);
+            this.Controls.Add(this.btnModificarBebida);
+            this.Controls.Add(this.btnNuevaBebida);
             this.Controls.Add(this.grpBebidas);
             this.Controls.Add(this.dgvBebidas);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmBebidas";
             this.Text = "Mesas";
-            //this.Activated += new System.EventHandler(this.frmBebidas_Activated);
-            //this.Load += new System.EventHandler(this.frmBebidas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvBebidas)).EndInit();
             this.grpBebidas.ResumeLayout(false);
             this.grpBebidas.PerformLayout();
@@ -321,9 +319,9 @@
         private System.Windows.Forms.Label lblStock;
         private System.Windows.Forms.ProgressBar prgCantidad;
         private System.Windows.Forms.Label lblCantidad;
-        private System.Windows.Forms.Button btnNuevoTurno;
-        private System.Windows.Forms.Button btnModificarTurno;
-        private System.Windows.Forms.Button btnEliminarTurno;
+        private System.Windows.Forms.Button btnNuevaBebida;
+        private System.Windows.Forms.Button btnModificarBebida;
+        private System.Windows.Forms.Button btnEliminarBebida;
         private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.Label lblCodigo;
         private System.Windows.Forms.TextBox txtNombre;

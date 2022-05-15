@@ -86,35 +86,6 @@ namespace Conexión
 
         }
 
-        public bool EscribirDatos(string query)
-        {
-            try
-            {
-                AbrirConexion();
-                SqlCommand cmd = new SqlCommand();
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = query;
-                cmd.Connection = conexion;
-                cmd.ExecuteNonQuery();
-                return true;
-            }
-            catch (SqlException sql)
-            {
-                return false;
-                throw sql;
-            }
-            catch (Exception ex)
-            {
-                return false;
-                throw ex;
-            }
-            finally
-            {
-                CerrarConexion();
-            }
-
-        }
-
         public bool LeerScalar(string query)
         {
             AbrirConexion();

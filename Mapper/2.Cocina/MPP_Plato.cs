@@ -17,7 +17,7 @@ namespace Mapper
         {
             if (ExistePlatoenPedido(oBE_Plato) == false)
             {
-                string query = @"Delete from Turno where [Codigo_Plato]=" + oBE_Plato.Codigo;
+                string query = @"Delete from Plato where [Codigo_Plato]=" + oBE_Plato.Codigo;
                 Acceso = new ClsDataBase();
                 return Acceso.EscribirTransaction(query);
             }
@@ -37,7 +37,7 @@ namespace Mapper
             }
             else
             {
-                query = @"Insert into Plato (Nombre, Tipo, Clase) values ( '" + Plato.Nombre + "','" + Plato.Tipo + "','" + Plato.Clase + "')";
+                query = @"Insert into Plato (Nombre, Tipo, Clase, Costo) values ( '" + Plato.Nombre + "','" + Plato.Tipo + "','" + Plato.Clase + "'," + Plato.CostoUnitario + ")";
             }
             Acceso = new ClsDataBase();
             return Acceso.EscribirTransaction(query);
@@ -60,7 +60,9 @@ namespace Mapper
                     Plato.Nombre = row[1].ToString();
                     Plato.Tipo = row[2].ToString();
                     Plato.Clase = row[3].ToString();
-                    Plato.Stock = Convert.ToInt32(row[4].ToString());
+                    if (!(row[4] is DBNull))
+                    { Plato.Stock = Convert.ToInt32(row[4].ToString()); }
+                    else { Plato.Stock = 0; }
                     Plato.CostoUnitario = Convert.ToDecimal(row[5].ToString());
                     ListadePlatos.Add(Plato);
                 }
@@ -79,7 +81,7 @@ namespace Mapper
         public bool ExistePlatoenPedido(BE_Plato oBE_Plato)
         {
             Acceso = new ClsDataBase();
-            string query = @"Select count(Codigo_Plato) from Pedido_Plato where Codigo_Plato= " + oBE_Plato.Codigo;
+            string query = @"Select count (Codigo_Plato) from Pedido_Plato,Pedido where Codigo_Plato= " + oBE_Plato.Codigo + " and Pedido_Plato.Codigo_Pedido=Pedido.Codigo_Pedido and Pedido.Activo=1" ;
             return Acceso.LeerScalar(query);
         }
         public double PromedioPlatoEnPedido(BE_Plato oBE_Plato)

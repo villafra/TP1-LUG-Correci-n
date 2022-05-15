@@ -62,7 +62,7 @@
             this.dgvMesas.RowTemplate.Height = 24;
             this.dgvMesas.Size = new System.Drawing.Size(651, 254);
             this.dgvMesas.TabIndex = 0;
-            //this.dgvMesas.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMesas_RowEnter);
+            this.dgvMesas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMesas_CellContentClick);
             // 
             // grpMesas
             // 
@@ -133,7 +133,7 @@
             // lblEstado
             // 
             this.lblEstado.AutoSize = true;
-            this.lblEstado.Location = new System.Drawing.Point(589, 33);
+            this.lblEstado.Location = new System.Drawing.Point(609, 33);
             this.lblEstado.Name = "lblEstado";
             this.lblEstado.Size = new System.Drawing.Size(50, 16);
             this.lblEstado.TabIndex = 7;
@@ -142,7 +142,7 @@
             // rdbReservada
             // 
             this.rdbReservada.AutoSize = true;
-            this.rdbReservada.Location = new System.Drawing.Point(573, 67);
+            this.rdbReservada.Location = new System.Drawing.Point(499, 117);
             this.rdbReservada.Name = "rdbReservada";
             this.rdbReservada.Size = new System.Drawing.Size(96, 20);
             this.rdbReservada.TabIndex = 6;
@@ -153,7 +153,7 @@
             // RdbOcupada
             // 
             this.RdbOcupada.AutoSize = true;
-            this.RdbOcupada.Location = new System.Drawing.Point(708, 67);
+            this.RdbOcupada.Location = new System.Drawing.Point(683, 117);
             this.RdbOcupada.Name = "RdbOcupada";
             this.RdbOcupada.Size = new System.Drawing.Size(84, 20);
             this.RdbOcupada.TabIndex = 5;
@@ -164,7 +164,7 @@
             // rdbDisponible
             // 
             this.rdbDisponible.AutoSize = true;
-            this.rdbDisponible.Location = new System.Drawing.Point(438, 67);
+            this.rdbDisponible.Location = new System.Drawing.Point(612, 64);
             this.rdbDisponible.Name = "rdbDisponible";
             this.rdbDisponible.Size = new System.Drawing.Size(93, 20);
             this.rdbDisponible.TabIndex = 4;
@@ -179,7 +179,6 @@
             this.txtCapacidad.Size = new System.Drawing.Size(136, 22);
             this.txtCapacidad.TabIndex = 3;
             this.txtCapacidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            //this.txtCapacidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCapacidad_KeyPress);
             // 
             // lblCapacidad
             // 
@@ -197,7 +196,6 @@
             this.txtNumeroMesa.Size = new System.Drawing.Size(136, 22);
             this.txtNumeroMesa.TabIndex = 1;
             this.txtNumeroMesa.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            //this.txtNumeroMesa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumeroMesa_KeyPress);
             // 
             // lblNumeroMesa
             // 
@@ -221,7 +219,7 @@
             this.btnEliminarMesa.Size = new System.Drawing.Size(100, 93);
             this.btnEliminarMesa.TabIndex = 4;
             this.btnEliminarMesa.UseVisualStyleBackColor = true;
-            //this.btnEliminarMesa.Click += new System.EventHandler(this.btnEliminarMesa_Click);
+            this.btnEliminarMesa.Click += new System.EventHandler(this.btnEliminarMesa_Click);
             // 
             // btnModificarMesa
             // 
@@ -236,7 +234,7 @@
             this.btnModificarMesa.Size = new System.Drawing.Size(100, 93);
             this.btnModificarMesa.TabIndex = 3;
             this.btnModificarMesa.UseVisualStyleBackColor = true;
-            //this.btnModificarMesa.Click += new System.EventHandler(this.btnModificarMesa_Click);
+            this.btnModificarMesa.Click += new System.EventHandler(this.btnModificarMesa_Click);
             // 
             // btnNuevaMesa
             // 
@@ -251,7 +249,7 @@
             this.btnNuevaMesa.Size = new System.Drawing.Size(100, 93);
             this.btnNuevaMesa.TabIndex = 2;
             this.btnNuevaMesa.UseVisualStyleBackColor = true;
-            //this.btnNuevaMesa.Click += new System.EventHandler(this.btnNuevaMesa_Click);
+            this.btnNuevaMesa.Click += new System.EventHandler(this.btnNuevaMesa_Click);
             // 
             // frmMesas
             // 
@@ -266,8 +264,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmMesas";
             this.Text = "Mesas";
-            //this.Activated += new System.EventHandler(this.frmMesas_Activated);
-            //this.Load += new System.EventHandler(this.frmMesas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMesas)).EndInit();
             this.grpMesas.ResumeLayout(false);
             this.grpMesas.PerformLayout();

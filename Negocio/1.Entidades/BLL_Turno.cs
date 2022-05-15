@@ -33,11 +33,14 @@ namespace BLL
             return oMPP_Turno.Listar();
         }
 
-
+        public int CantidadMozosEnTurno(BE_Turno oBE_Turno)
+        {
+            return oMPP_Turno.CantidadMozosEnTurno(oBE_Turno);
+        }
 
         public BE_Turno ListarObjeto(BE_Turno oBE_Turno)
         {
-            throw new NotImplementedException();
+            return oMPP_Turno.ListarObjeto(oBE_Turno);  
         }
     }
 }

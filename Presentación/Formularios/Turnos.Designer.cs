@@ -184,7 +184,7 @@
             // 
             this.prgCantidad.BackColor = System.Drawing.SystemColors.HotTrack;
             this.prgCantidad.Location = new System.Drawing.Point(360, 125);
-            this.prgCantidad.Maximum = 10;
+            this.prgCantidad.Maximum = 7;
             this.prgCantidad.Name = "prgCantidad";
             this.prgCantidad.Size = new System.Drawing.Size(157, 42);
             this.prgCantidad.Step = 1;

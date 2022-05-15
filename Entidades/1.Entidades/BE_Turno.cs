@@ -13,6 +13,12 @@ namespace BE
         public string NombreTurno { get; set; }
         public DateTime HoraInicio { get; set; }
         public DateTime HoraFin { get; set; }
+        public List<BE_Mozo> Mozos { get; set; }
+
+        public BE_Turno()
+        {
+            Mozos = new List<BE_Mozo>();
+        }
 
         public override string ToString()
         {

@@ -47,6 +47,8 @@
             this.btnEliminarPlato = new System.Windows.Forms.Button();
             this.btnModificarPlato = new System.Windows.Forms.Button();
             this.btnNuevoPlato = new System.Windows.Forms.Button();
+            this.txtStock = new System.Windows.Forms.TextBox();
+            this.lblStock = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPlatos)).BeginInit();
             this.grpPlatos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedidosConPlat)).BeginInit();
@@ -68,6 +70,8 @@
             // 
             // grpPlatos
             // 
+            this.grpPlatos.Controls.Add(this.txtStock);
+            this.grpPlatos.Controls.Add(this.lblStock);
             this.grpPlatos.Controls.Add(this.txtCosto);
             this.grpPlatos.Controls.Add(this.lblCosto);
             this.grpPlatos.Controls.Add(this.ComboClase);
@@ -150,7 +154,7 @@
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(281, 63);
+            this.txtNombre.Location = new System.Drawing.Point(248, 63);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(286, 22);
             this.txtNombre.TabIndex = 14;
@@ -159,7 +163,7 @@
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(289, 33);
+            this.lblNombre.Location = new System.Drawing.Point(256, 33);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(56, 16);
             this.lblNombre.TabIndex = 13;
@@ -186,7 +190,7 @@
             // lblCantidad
             // 
             this.lblCantidad.AutoSize = true;
-            this.lblCantidad.Location = new System.Drawing.Point(691, 91);
+            this.lblCantidad.Location = new System.Drawing.Point(715, 89);
             this.lblCantidad.Name = "lblCantidad";
             this.lblCantidad.Size = new System.Drawing.Size(14, 16);
             this.lblCantidad.TabIndex = 10;
@@ -195,7 +199,7 @@
             // prgFrecuencia
             // 
             this.prgFrecuencia.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.prgFrecuencia.Location = new System.Drawing.Point(641, 125);
+            this.prgFrecuencia.Location = new System.Drawing.Point(663, 124);
             this.prgFrecuencia.Name = "prgFrecuencia";
             this.prgFrecuencia.Size = new System.Drawing.Size(157, 42);
             this.prgFrecuencia.Step = 1;
@@ -204,7 +208,7 @@
             // lblFrecuenciaPlato
             // 
             this.lblFrecuenciaPlato.AutoSize = true;
-            this.lblFrecuenciaPlato.Location = new System.Drawing.Point(662, 33);
+            this.lblFrecuenciaPlato.Location = new System.Drawing.Point(694, 33);
             this.lblFrecuenciaPlato.Name = "lblFrecuenciaPlato";
             this.lblFrecuenciaPlato.Size = new System.Drawing.Size(67, 16);
             this.lblFrecuenciaPlato.TabIndex = 8;
@@ -237,6 +241,7 @@
             this.btnEliminarPlato.Size = new System.Drawing.Size(100, 93);
             this.btnEliminarPlato.TabIndex = 4;
             this.btnEliminarPlato.UseVisualStyleBackColor = true;
+            this.btnEliminarPlato.Click += new System.EventHandler(this.btnEliminarPlato_Click);
             // 
             // btnModificarPlato
             // 
@@ -251,6 +256,7 @@
             this.btnModificarPlato.Size = new System.Drawing.Size(100, 93);
             this.btnModificarPlato.TabIndex = 3;
             this.btnModificarPlato.UseVisualStyleBackColor = true;
+            this.btnModificarPlato.Click += new System.EventHandler(this.btnModificarPlato_Click);
             // 
             // btnNuevoPlato
             // 
@@ -265,6 +271,25 @@
             this.btnNuevoPlato.Size = new System.Drawing.Size(100, 93);
             this.btnNuevoPlato.TabIndex = 2;
             this.btnNuevoPlato.UseVisualStyleBackColor = true;
+            this.btnNuevoPlato.Click += new System.EventHandler(this.btnNuevoPlato_Click);
+            // 
+            // txtStock
+            // 
+            this.txtStock.Enabled = false;
+            this.txtStock.Location = new System.Drawing.Point(561, 65);
+            this.txtStock.Name = "txtStock";
+            this.txtStock.Size = new System.Drawing.Size(118, 22);
+            this.txtStock.TabIndex = 24;
+            this.txtStock.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // lblStock
+            // 
+            this.lblStock.AutoSize = true;
+            this.lblStock.Location = new System.Drawing.Point(558, 33);
+            this.lblStock.Name = "lblStock";
+            this.lblStock.Size = new System.Drawing.Size(41, 16);
+            this.lblStock.TabIndex = 23;
+            this.lblStock.Text = "Stock";
             // 
             // frmPlatos
             // 
@@ -309,5 +334,7 @@
         private System.Windows.Forms.ComboBox ComboTipo;
         private System.Windows.Forms.TextBox txtCosto;
         private System.Windows.Forms.Label lblCosto;
+        private System.Windows.Forms.TextBox txtStock;
+        private System.Windows.Forms.Label lblStock;
     }
 }

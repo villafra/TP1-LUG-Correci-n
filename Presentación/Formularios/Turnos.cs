@@ -26,6 +26,7 @@ namespace Presentación
             ActualizarListado();
             Aspecto.FormatearDGV(dgvTurnos);
             Aspecto.FormatearGRP(grpTurnos);
+            Aspecto.FormatearDGV(dgvMozosEnturno);
         }
 
         private void Nuevo()
@@ -73,6 +74,10 @@ namespace Presentación
             txtNombreTurno.Text = oBE_Turno.NombreTurno;
             dtpHoraInicio.Value = oBE_Turno.HoraInicio;
             dtpHoraFin.Value = oBE_Turno.HoraFin;
+            lblCantidad.Text = oBLL_Turno.CantidadMozosEnTurno(oBE_Turno).ToString();
+            prgCantidad.Value = oBLL_Turno.CantidadMozosEnTurno(oBE_Turno);
+            Calculos.RefreshGrilla(dgvMozosEnturno, oBLL_Turno.ListarObjeto(oBE_Turno).Mozos);
+            Aspecto.DGVTurnosMozos(dgvMozosEnturno);
         }
 
         private void btnNuevoTurno_Click(object sender, EventArgs e)

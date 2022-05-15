@@ -20,5 +20,9 @@ namespace BE
         {
             Stock += Cantidad;
         }
+        public override string ToString()
+        {
+            return this.Nombre;
+        }
     }
 }

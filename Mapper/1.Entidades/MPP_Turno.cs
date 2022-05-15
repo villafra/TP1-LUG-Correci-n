@@ -70,11 +70,36 @@ namespace Mapper
             return ListadeTurnos;
         }
 
-        public BE_Turno ListarObjeto(BE_Turno Objeto)
+        public BE_Turno ListarObjeto(BE_Turno Obe_Turno)
         {
-            throw new NotImplementedException();
+            Acceso = new ClsDataBase();
+            DataSet Ds;
+            string query = @"Select * from Turno, Mozo where Turno.Codigo_Turno=Mozo.Codigo_Turno and Turno.Codigo_Turno= " + Obe_Turno.Codigo;
+            Ds = Acceso.DevolverListado(query);
+            if (Ds.Tables[0].Rows.Count > 0)
+            {
+                Obe_Turno.Mozos.Clear();
+                foreach (DataRow row in Ds.Tables[0].Rows)
+                {
+                    BE_Mozo Mozo = new BE_Mozo();
+                    Mozo.Codigo = Convert.ToInt32(row[4].ToString());
+                    Mozo.DNI = long.Parse(row[5].ToString());
+                    Mozo.Nombre = row[6].ToString();
+                    Mozo.Apellido = row[7].ToString();
+                    Mozo.FechaNacimiento = Convert.ToDateTime(row[8].ToString());
+                    Mozo.Edad = Mozo.DevolverEdad();
+                    Mozo.Turno = Obe_Turno;
+                    Obe_Turno.Mozos.Add(Mozo);
+                }
+            }
+            return Obe_Turno;
         }
-
+        public int CantidadMozosEnTurno(BE_Turno oBE_Turno)
+        {
+            Acceso = new ClsDataBase();
+            string query = @"select count(Turno.Codigo_Turno) from Turno, Mozo where Turno.Codigo_Turno=Mozo.Codigo_Turno and Turno.Codigo_Turno= " + oBE_Turno.Codigo;
+            return Acceso.Cantidades(query);
+        }
         public bool ExisteMozoenTurno(BE_Turno oBE_Turno)
         {
             Acceso = new ClsDataBase();

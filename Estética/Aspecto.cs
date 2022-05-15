@@ -245,8 +245,11 @@ namespace Estética
         public static void DGVTurnosMozos(DataGridView dgv)
         {
             dgv.Columns[0].Visible = false;
+            dgv.Columns[1].HeaderText = "Legajo";
             dgv.Columns[2].Visible = false;
             dgv.Columns[5].Visible = false;
+            dgv.Columns[6].Visible = false;
+            dgv.Columns[7].Visible = false;
             foreach (DataGridViewColumn columns in dgv.Columns)
             {
                 columns.SortMode = DataGridViewColumnSortMode.NotSortable;
