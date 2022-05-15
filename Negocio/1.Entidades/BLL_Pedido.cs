@@ -21,17 +21,17 @@ namespace BLL
 
         public bool Baja(BE_Pedido Pedido)
         {
-            throw new NotImplementedException();
+            return oMPP_Pedido.Baja(Pedido);
         }
 
         public bool Guardar(BE_Pedido Pedido)
         {
-            throw new NotImplementedException();
+            return oMPP_Pedido.Guardar(Pedido);
         }
 
         public List<BE_Pedido> Listar()
         {
-            throw new NotImplementedException();
+            return oMPP_Pedido.Listar();
         }
 
         public BE_Pedido ListarObjeto(BE_Pedido Pedido)

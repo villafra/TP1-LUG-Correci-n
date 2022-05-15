@@ -30,9 +30,9 @@
         {
             this.dgvReservas = new System.Windows.Forms.DataGridView();
             this.dgvMesasDisponibles = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblAsignarMesa = new System.Windows.Forms.Label();
+            this.lblCancelarReserva = new System.Windows.Forms.Label();
+            this.lblEditarMesa = new System.Windows.Forms.Label();
             this.btnEditarMesa = new System.Windows.Forms.Button();
             this.btnCancelarReserva = new System.Windows.Forms.Button();
             this.btnAsignarMesa = new System.Windows.Forms.Button();
@@ -66,35 +66,35 @@
             this.dgvMesasDisponibles.Size = new System.Drawing.Size(341, 338);
             this.dgvMesasDisponibles.TabIndex = 2;
             // 
-            // label1
+            // lblAsignarMesa
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(170, 394);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(190, 25);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "<== Asignar Mesa";
+            this.lblAsignarMesa.AutoSize = true;
+            this.lblAsignarMesa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAsignarMesa.Location = new System.Drawing.Point(170, 394);
+            this.lblAsignarMesa.Name = "lblAsignarMesa";
+            this.lblAsignarMesa.Size = new System.Drawing.Size(190, 25);
+            this.lblAsignarMesa.TabIndex = 5;
+            this.lblAsignarMesa.Text = "<== Asignar Mesa";
             // 
-            // label2
+            // lblCancelarReserva
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(167, 495);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(229, 25);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "<== Cancelar Reserva";
+            this.lblCancelarReserva.AutoSize = true;
+            this.lblCancelarReserva.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCancelarReserva.Location = new System.Drawing.Point(167, 495);
+            this.lblCancelarReserva.Name = "lblCancelarReserva";
+            this.lblCancelarReserva.Size = new System.Drawing.Size(229, 25);
+            this.lblCancelarReserva.TabIndex = 6;
+            this.lblCancelarReserva.Text = "<== Cancelar Reserva";
             // 
-            // label3
+            // lblEditarMesa
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(610, 394);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(172, 25);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "<== Editar Mesa";
+            this.lblEditarMesa.AutoSize = true;
+            this.lblEditarMesa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEditarMesa.Location = new System.Drawing.Point(610, 394);
+            this.lblEditarMesa.Name = "lblEditarMesa";
+            this.lblEditarMesa.Size = new System.Drawing.Size(172, 25);
+            this.lblEditarMesa.TabIndex = 7;
+            this.lblEditarMesa.Text = "<== Editar Mesa";
             // 
             // btnEditarMesa
             // 
@@ -107,7 +107,7 @@
             this.btnEditarMesa.Size = new System.Drawing.Size(108, 79);
             this.btnEditarMesa.TabIndex = 8;
             this.btnEditarMesa.UseVisualStyleBackColor = true;
-            //this.btnEditarMesa.Click += new System.EventHandler(this.btnEditarMesa_Click);
+            this.btnEditarMesa.Click += new System.EventHandler(this.btnEditarMesa_Click);
             // 
             // btnCancelarReserva
             // 
@@ -120,7 +120,7 @@
             this.btnCancelarReserva.Size = new System.Drawing.Size(108, 79);
             this.btnCancelarReserva.TabIndex = 4;
             this.btnCancelarReserva.UseVisualStyleBackColor = true;
-            //this.btnCancelarReserva.Click += new System.EventHandler(this.btnCancelarReserva_Click);
+            this.btnCancelarReserva.Click += new System.EventHandler(this.btnCancelarReserva_Click);
             // 
             // btnAsignarMesa
             // 
@@ -133,17 +133,17 @@
             this.btnAsignarMesa.Size = new System.Drawing.Size(108, 79);
             this.btnAsignarMesa.TabIndex = 3;
             this.btnAsignarMesa.UseVisualStyleBackColor = true;
-            //this.btnAsignarMesa.Click += new System.EventHandler(this.btnAsignarMesa_Click);
+            this.btnAsignarMesa.Click += new System.EventHandler(this.btnAsignarMesa_Click);
             // 
-            // Reservas
+            // frmReservas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(829, 562);
             this.Controls.Add(this.btnEditarMesa);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblEditarMesa);
+            this.Controls.Add(this.lblCancelarReserva);
+            this.Controls.Add(this.lblAsignarMesa);
             this.Controls.Add(this.btnCancelarReserva);
             this.Controls.Add(this.btnAsignarMesa);
             this.Controls.Add(this.dgvMesasDisponibles);
@@ -151,8 +151,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmReservas";
             this.Text = "Reservas";
-            //this.Activated += new System.EventHandler(this.Reservas_Activated);
-            //this.Load += new System.EventHandler(this.Reservas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvReservas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMesasDisponibles)).EndInit();
             this.ResumeLayout(false);
@@ -166,9 +164,9 @@
         private System.Windows.Forms.DataGridView dgvMesasDisponibles;
         private System.Windows.Forms.Button btnAsignarMesa;
         private System.Windows.Forms.Button btnCancelarReserva;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblAsignarMesa;
+        private System.Windows.Forms.Label lblCancelarReserva;
+        private System.Windows.Forms.Label lblEditarMesa;
         private System.Windows.Forms.Button btnEditarMesa;
     }
 }

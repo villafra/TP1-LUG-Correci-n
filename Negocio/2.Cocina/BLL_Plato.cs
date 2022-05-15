@@ -32,6 +32,10 @@ namespace BLL
         {
             return oMPP_Plato.Listar();
         }
+        public List<BE_Plato> ListarPlatosenPedido(BE_Pedido oBE_Pedido)
+        {
+            return oMPP_Plato.ListarPlatosenPedido(oBE_Pedido);
+        }
         public double PromedioPlatoEnPedido(BE_Plato oBE_Plato)
         {
             return oMPP_Plato.PromedioPlatoEnPedido(oBE_Plato);

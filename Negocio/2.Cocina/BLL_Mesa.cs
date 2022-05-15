@@ -31,7 +31,10 @@ namespace BLL
         {
             return oMPP_Mesa.Listar();
         }
-
+        public List<BE_Mesa> ListarDisponibles()
+        {
+            return oMPP_Mesa.ListarDisponibles();
+        }
         public BE_Mesa ListarObjeto(BE_Mesa Objeto)
         {
             throw new NotImplementedException();

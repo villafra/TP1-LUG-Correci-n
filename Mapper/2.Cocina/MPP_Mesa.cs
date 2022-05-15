@@ -70,6 +70,33 @@ namespace Mapper
             }
             return ListadeMesas;
         }
+        public List<BE_Mesa> ListarDisponibles()
+        {
+            Acceso = new ClsDataBase();
+            DataSet Ds;
+            string query = @"Select * from Mesa where Estado = 'Disponible'";
+            Ds = Acceso.DevolverListado(query);
+            List<BE_Mesa> ListadeMesas = new List<BE_Mesa>();
+
+            if (Ds.Tables[0].Rows.Count > 0)
+            {
+                foreach (DataRow row in Ds.Tables[0].Rows)
+                {
+                    BE_Mesa Mesa = new BE_Mesa();
+                    Mesa.Codigo = Convert.ToInt32(row[0].ToString());
+                    Mesa.NroDeMesa = Convert.ToInt32(row[1].ToString());
+                    Mesa.Capacidad = Convert.ToInt32(row[2].ToString());
+                    Mesa.Estado = row[3].ToString();
+                    Mesa.CantidadComensales = Convert.ToInt32(row[4].ToString());
+                    ListadeMesas.Add(Mesa);
+                }
+            }
+            else
+            {
+                ListadeMesas = null;
+            }
+            return ListadeMesas;
+        }
 
         public BE_Mesa ListarObjeto(BE_Mesa Objeto)
         {

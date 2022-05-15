@@ -15,5 +15,10 @@ namespace BE
         public DateTime FechaReserva { get; set; }
         public int CantidadDeComensales { get; set; }
         public bool Estado { get; set; }
+
+        public override string ToString()
+        {
+            return this.Codigo.ToString();
+        }
     }
 }

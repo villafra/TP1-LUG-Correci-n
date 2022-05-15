@@ -73,7 +73,36 @@ namespace Mapper
             }
             return ListadePlatos;
         }
+        public List<BE_Plato> ListarPlatosenPedido(BE_Pedido oBE_Pedido)
+        {
+            Acceso = new ClsDataBase();
+            DataSet Ds;
+            string query = @"Select * from Pedido_Plato,Plato where Plato.Codigo_Plato=Pedido_Plato.Codigo_Plato and  Codigo_Pedido = " + oBE_Pedido.Codigo;
+            Ds = Acceso.DevolverListado(query);
+            List<BE_Plato> ListadePlatos = new List<BE_Plato>();
 
+            if (Ds.Tables[0].Rows.Count > 0)
+            {
+                foreach (DataRow row in Ds.Tables[0].Rows)
+                {
+                    BE_Plato Plato = new BE_Plato();
+                    Plato.Codigo = Convert.ToInt32(row[3].ToString());
+                    Plato.Nombre = row[4].ToString();
+                    Plato.Tipo = row[5].ToString();
+                    Plato.Clase = row[6].ToString();
+                    if (!(row[7] is DBNull))
+                    { Plato.Stock = Convert.ToInt32(row[7].ToString()); }
+                    else { Plato.Stock = 0; }
+                    Plato.CostoUnitario = Convert.ToDecimal(row[8].ToString());
+                    ListadePlatos.Add(Plato);
+                }
+            }
+            else
+            {
+                ListadePlatos = null;
+            }
+            return ListadePlatos;
+        }
         public BE_Plato ListarObjeto(BE_Plato Objeto)
         {
             throw new NotImplementedException();

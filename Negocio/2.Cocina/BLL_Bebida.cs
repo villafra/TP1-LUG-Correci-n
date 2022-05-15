@@ -31,7 +31,10 @@ namespace BLL
         {
             return oMPP_Bebida.Listar();
         }
-
+        public List<BE_Bebida> ListarBebidasEnPedido(BE_Pedido oBE_Pedido)
+        {
+            return oMPP_Bebida.ListarBebidasEnPedido(oBE_Pedido);
+        }
         public BE_Bebida ListarObjeto(BE_Bebida oBE_Bebida)
         {
             return oMPP_Bebida.ListarObjeto(oBE_Bebida);

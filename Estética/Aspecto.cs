@@ -346,6 +346,7 @@ namespace Estética
             dgv.Columns[5].HeaderText = "Monto";
             dgv.Columns[5].DefaultCellStyle.Format = "c";
             dgv.Columns[6].HeaderText = "Activo?";
+            dgv.Columns[7].Visible = false;
             foreach (DataGridViewColumn columns in dgv.Columns)
             {
                 columns.SortMode = DataGridViewColumnSortMode.NotSortable;
