@@ -57,5 +57,32 @@ namespace Presentación
             catch { }
             
         }
+
+        private void btnCerrarPedido_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                oBE_Pedido = (BE_Pedido)dgvPedidos.SelectedRows[0].DataBoundItem;
+                oBLL_Pedido.Guardar(oBE_Pedido);
+                ActualizarListado();
+            }
+            catch { }
+        }
+
+        private void btnCancelarPedido_Click(object sender, EventArgs e)
+        {
+            try
+            {         
+                oBE_Pedido = (BE_Pedido)dgvPedidos.SelectedRows[0].DataBoundItem;
+                if (Calculos.EstaSeguro("Cancelar Pedido", oBE_Pedido.Codigo, oBE_Pedido.ToString()))
+                {
+                    oBLL_Pedido.Baja(oBE_Pedido);
+                    ActualizarListado();
+                }
+
+                
+            }
+            catch { }
+        }
     }
 }

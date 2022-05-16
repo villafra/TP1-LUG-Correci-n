@@ -98,6 +98,7 @@
             this.btnCancelarPedido.Size = new System.Drawing.Size(108, 79);
             this.btnCancelarPedido.TabIndex = 4;
             this.btnCancelarPedido.UseVisualStyleBackColor = true;
+            this.btnCancelarPedido.Click += new System.EventHandler(this.btnCancelarPedido_Click);
             // 
             // btnCerrarPedido
             // 
@@ -110,6 +111,7 @@
             this.btnCerrarPedido.Size = new System.Drawing.Size(108, 79);
             this.btnCerrarPedido.TabIndex = 3;
             this.btnCerrarPedido.UseVisualStyleBackColor = true;
+            this.btnCerrarPedido.Click += new System.EventHandler(this.btnCerrarPedido_Click);
             // 
             // dgvBebidas
             // 

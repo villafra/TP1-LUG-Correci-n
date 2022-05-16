@@ -13,14 +13,22 @@ namespace Mapper
     public class MPP_Pedido : IGestionable<BE_Pedido>
     {
         ClsDataBase Acceso;
-        public bool Baja(BE_Pedido Objeto)
+        public bool Baja(BE_Pedido oBE_Pedido)
         {
-            throw new NotImplementedException();
+            string[] query = new string[2];
+            query[0] = @"update Pedido set Activo = 0, Cancelado = 1 where Codigo_Pedido = " + oBE_Pedido.Codigo;
+            query[1] = @"update Mesa set Estado='Disponible', CantidadComensales=0 where Nro_Mesa= " + oBE_Pedido.CodigoMesa.Codigo;
+            Acceso = new ClsDataBase();
+            return Acceso.EscribirTransaction(query);
         }
 
-        public bool Guardar(BE_Pedido Objeto)
+        public bool Guardar(BE_Pedido oBE_Pedido)
         {
-            throw new NotImplementedException();
+            string[] query = new string[2];
+            query[0] = @"update Pedido set Activo = 0 where Codigo_Pedido = " + oBE_Pedido.Codigo;
+            query[1] = @"update Mesa set Estado='Disponible', CantidadComensales=0 where Nro_Mesa= " + oBE_Pedido.CodigoMesa.Codigo;
+            Acceso = new ClsDataBase();
+            return Acceso.EscribirTransaction(query);
         }
 
         public List<BE_Pedido> Listar()

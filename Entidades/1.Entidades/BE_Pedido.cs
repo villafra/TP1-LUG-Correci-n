@@ -38,6 +38,10 @@ namespace BE
                 Monto += bebida.CostoUnitario;
             }
         }
+        public override string ToString()
+        {
+            return this.Codigo.ToString();
+        }
 
     }
 }
