@@ -95,6 +95,58 @@ namespace Mapper
                             }
                         }
                     }
+                    DataSet Ds3;
+                    string query3 = @"Select * from Plato,Pedido, Pedido_Plato where Pedido.Codigo_Pedido=Pedido_Plato.Codigo_Pedido and Pedido_Plato.Codigo_Plato=Plato.Codigo_Plato and Pedido.Codigo_Pedido= " + Pedido.Codigo;
+                    Ds3 = Acceso.DevolverListado(query3);
+                    if (Ds3.Tables[0].Rows.Count > 0)
+                    {
+                        foreach (DataRow row3 in Ds3.Tables[0].Rows)
+                        {
+                            BE_Plato Plato = new BE_Plato();
+                            Plato.Codigo = Convert.ToInt32(row3[0].ToString());
+                            Plato.Nombre = row3[1].ToString();
+                            Plato.Tipo = row3[2].ToString();
+                            Plato.Clase = row3[3].ToString();
+                            if (!(row3[4] is DBNull))
+                            { Plato.Stock = Convert.ToInt32(row3[4].ToString()); }
+                            else { Plato.Stock = 0; }
+                            Plato.CostoUnitario = Convert.ToDecimal(row3[5].ToString());
+                            Pedido.Platos.Add(Plato);
+                        }
+                    }
+                    DataSet Ds4;
+                    string query4 = @"Select * from Bebida,Pedido, Pedido_Bebida where Pedido.Codigo_Pedido=Pedido_Bebida.Codigo_Pedido and Pedido_Bebida.Codigo_Bebida=Bebida.Codigo_Bebida and Pedido.Codigo_Pedido= " + Pedido.Codigo;
+                    Ds4 = Acceso.DevolverListado(query4);
+                    if (Ds4.Tables[0].Rows.Count > 0)
+                    {
+                        foreach(DataRow row4 in Ds4.Tables[0].Rows)
+                        {
+                            BE_Bebida Bebida = new BE_Bebida();
+                            BE_Bebida_Alcohólica Bebida_Alcohólica = new BE_Bebida_Alcohólica();
+                            if (row4[6].ToString() == "")
+                            {
+                                Bebida.Codigo = Convert.ToInt32(row4[0].ToString());
+                                Bebida.Nombre = row4[1].ToString();
+                                Bebida.Tipo = row4[2].ToString();
+                                Bebida.Presentación = row4[3].ToString();
+                                Bebida.CostoUnitario = Convert.ToDecimal(row4[4].ToString());
+                                Bebida.Stock = Convert.ToInt32(row4[5].ToString());
+                                Pedido.Bebidas.Add(Bebida);
+                            }
+                            else
+                            {
+                                Bebida_Alcohólica.Codigo = Convert.ToInt32(row4[0].ToString());
+                                Bebida_Alcohólica.Nombre = row4[1].ToString();
+                                Bebida_Alcohólica.Tipo = row4[2].ToString();
+                                Bebida_Alcohólica.Presentación = row4[3].ToString();
+                                Bebida_Alcohólica.CostoUnitario = Convert.ToDecimal(row4[4].ToString());
+                                Bebida_Alcohólica.Stock = Convert.ToInt32(row4[5].ToString());
+                                Bebida_Alcohólica.GraduaciónAlcoholica = Convert.ToDecimal(row4[6].ToString());
+                                Pedido.Bebidas.Add(Bebida_Alcohólica);
+                            }
+                        }
+                    }
+                    Pedido.CalcularMonto();
                     ListadePedidos.Add(Pedido);
                 }
             }

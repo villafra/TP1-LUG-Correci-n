@@ -49,8 +49,10 @@ namespace Presentación
             try
             {
                 oBE_Pedido = (BE_Pedido)dgvPedidos.SelectedRows[0].DataBoundItem;
-                Calculos.RefreshGrilla(dgvBebidas,oBLL_Bebida.ListarBebidasEnPedido(oBE_Pedido));
-                Calculos.RefreshGrilla(dgvPlatos,oBLL_Plato.ListarPlatosenPedido(oBE_Pedido));
+                Calculos.RefreshGrilla(dgvBebidas,oBE_Pedido.Bebidas);
+                Calculos.RefreshGrilla(dgvPlatos,oBE_Pedido.Platos);
+                Aspecto.DGVBebidasPedidos(dgvBebidas);
+                Aspecto.DGVPlatosPedidos(dgvPlatos);
             }
             catch { }
             

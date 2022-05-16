@@ -50,7 +50,7 @@
             this.dgvPedidos.ReadOnly = true;
             this.dgvPedidos.RowHeadersWidth = 51;
             this.dgvPedidos.RowTemplate.Height = 24;
-            this.dgvPedidos.Size = new System.Drawing.Size(566, 338);
+            this.dgvPedidos.Size = new System.Drawing.Size(516, 338);
             this.dgvPedidos.TabIndex = 1;
             this.dgvPedidos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPedidos_CellContentClick);
             // 
@@ -59,12 +59,12 @@
             this.dgvPlatos.AllowUserToAddRows = false;
             this.dgvPlatos.AllowUserToDeleteRows = false;
             this.dgvPlatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPlatos.Location = new System.Drawing.Point(594, 26);
+            this.dgvPlatos.Location = new System.Drawing.Point(544, 26);
             this.dgvPlatos.Name = "dgvPlatos";
             this.dgvPlatos.ReadOnly = true;
             this.dgvPlatos.RowHeadersWidth = 51;
             this.dgvPlatos.RowTemplate.Height = 24;
-            this.dgvPlatos.Size = new System.Drawing.Size(253, 205);
+            this.dgvPlatos.Size = new System.Drawing.Size(303, 262);
             this.dgvPlatos.TabIndex = 2;
             // 
             // lblCerrarPedido
@@ -116,12 +116,12 @@
             this.dgvBebidas.AllowUserToAddRows = false;
             this.dgvBebidas.AllowUserToDeleteRows = false;
             this.dgvBebidas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBebidas.Location = new System.Drawing.Point(594, 248);
+            this.dgvBebidas.Location = new System.Drawing.Point(544, 294);
             this.dgvBebidas.Name = "dgvBebidas";
             this.dgvBebidas.ReadOnly = true;
             this.dgvBebidas.RowHeadersWidth = 51;
             this.dgvBebidas.RowTemplate.Height = 24;
-            this.dgvBebidas.Size = new System.Drawing.Size(253, 205);
+            this.dgvBebidas.Size = new System.Drawing.Size(303, 262);
             this.dgvBebidas.TabIndex = 7;
             // 
             // frmPedidos

@@ -20,6 +20,12 @@ namespace BE
         public bool Activo { get; set; }
         public bool Cancelado { get; set; }
 
+        public BE_Pedido()
+        {
+            Platos = new List<BE_Plato>();
+            Bebidas = new List<BE_Bebida>();
+        }
+
         public void CalcularMonto()
         {
             Monto = 0;
